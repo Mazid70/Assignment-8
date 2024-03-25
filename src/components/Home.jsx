@@ -10,10 +10,8 @@ const Home = () => {
       .then((res) => res.json())
       .then((data) => setBooks(data));
   }, []);
-  console.log(books);
   return (
     <div className="container mx-auto">
-      <NavBar></NavBar>
       <Banner></Banner>
       <div>
         <h1 className="text-4xl font-bold text-center my-10">Books</h1>
