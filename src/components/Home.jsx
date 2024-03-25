@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import Banner from "./Banner";
-import NavBar from "./NavBar";
 import Book from "./Book";
 
 const Home = () => {

@@ -1,19 +1,58 @@
 import { NavLink } from "react-router-dom";
 
 const NavBar = () => {
-const Link=(
+  const Link = (
     <>
-        <li><NavLink to="/" >Home</NavLink></li>
-        <li><NavLink to="/listed" >Listed Books</NavLink></li>
-        <li><NavLink to="/read" >Pages to Read</NavLink></li>
+      <li>
+        <NavLink
+          to="/"
+          style={({ isActive }) => {
+            return {
+              fontWeight: isActive ? "bold" : "",
+              color: isActive ? "#23BE0A" : "#131313CC",
+              background: isActive ? "transparent" : "",
+              border: isActive ? "1px solid #23BE0A" : "",
+            };
+          }}
+        >
+          Home
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          to="/listed"
+          style={({ isActive }) => {
+            return {
+              fontWeight: isActive ? "bold" : "",
+              color: isActive ? "#23BE0A" : "#131313CC",
+              background: isActive ? "transparent" : "",
+              border: isActive ? "1px solid #23BE0A" : "",
+            };
+          }}
+        >
+          Listed Books
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          to="/read"
+          style={({ isActive }) => {
+            return {
+              fontWeight: isActive ? "bold" : "",
+              color: isActive ? "#23BE0A" : "#131313CC",
+              background: isActive ? "transparent" : "",
+              border: isActive ? "1px solid #23BE0A" : "",
+            };
+          }}
+        >
+          Pages to Read
+        </NavLink>
+      </li>
     </>
-)
-    
-
-
+  );
 
   return (
-    <nav>
+    <nav className="mt-5">
       <div className="navbar bg-base-100">
         <div className="navbar-start">
           <div className="dropdown">
@@ -35,20 +74,19 @@ const Link=(
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+              className="menu text-lg menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
             >
-             {Link}
+              {Link}
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl">Book Vibe</a>
+          <a className="btn btn-ghost text-3xl font-bold">Book Vibe</a>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">
-            {Link}
-          </ul>
+          <ul className="menu menu-horizontal px-1 text-lg ">{Link}</ul>
         </div>
-        <div className="navbar-end">
-          <a className="btn">Button</a>
+        <div className="navbar-end space-x-4">
+          <a className="btn bg-green-500 font-semibold text-white text-lg">Sign In</a>
+          <a className="btn bg-sky-500 font-semibold text-white text-lg">Sign In</a>
         </div>
       </div>
     </nav>
