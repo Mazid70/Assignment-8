@@ -6,14 +6,14 @@ const Book = ({ book }) => {
 
   return (
     <Link to={`/book/${bookId}`}>
-      <div className="rounded-xl border p-3 space-y-4">
+      <div className="rounded-xl border p-5 space-y-4">
         <div className="w-[410px] h-[300px] bg-[#F3F3F3] flex justify-center items-center mx-auto rounded-xl">
-          <img className="w-[140px] h-[190px]" src={image} alt="" />
+          <img className="w-[140px] h-[190px]" src={image} alt={bookName} />
         </div>
         <div className="">
           {tags.map((tag, idx) => (
             <button
-              className="bg-[#23BE0A0D] font-medium text-green-500 mr-5 mt-5 px-3 py-2 rounded-2xl"
+              className="bg-[#23BE0A0D] font-medium text-green-500 mr-2 mt-5 px-3 py-2 rounded-2xl"
               key={idx}
             >
               #{tag}
@@ -35,6 +35,6 @@ const Book = ({ book }) => {
   );
 };
 Book.propTypes = {
-  book: PropTypes.array,
+  book: PropTypes.object,
 };
 export default Book;

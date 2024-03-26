@@ -1,10 +1,9 @@
+import PropTypes from "prop-types";
 const ReadBooks = ({ book }) => {
   const {
-    bookId,
     bookName,
     author,
     image,
-    review,
     totalPages,
     rating,
     category,
@@ -60,5 +59,7 @@ const ReadBooks = ({ book }) => {
     </div>
   );
 };
-
+ReadBooks.propTypes = {
+  book: PropTypes.object,
+};
 export default ReadBooks;
