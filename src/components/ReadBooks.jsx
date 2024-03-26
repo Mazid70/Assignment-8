@@ -1,4 +1,7 @@
 import PropTypes from "prop-types";
+import { MdOutlineLocationOn } from "react-icons/md";
+import { IoPeopleOutline } from "react-icons/io5";
+import { MdOutlineContactPage } from "react-icons/md";
 const ReadBooks = ({ book }) => {
   const {
     bookName,
@@ -29,16 +32,16 @@ const ReadBooks = ({ book }) => {
               #{tag}
             </button>
           ))}
-          <h1 className=" text-base font-normal text-[#131313B3]">
-            Year of Publishing:{yearOfPublishing}
+          <h1 className="flex gap-2 items-center text-base font-normal text-[#131313B3]">
+          <MdOutlineLocationOn className="text-xl"/>  Year of Publishing:{yearOfPublishing}
           </h1>
         </div>
         <div className="flex">
-          <h1 className="font-semibold text-[#131313B3]  mr-5">
-            Publisher: {publisher}
+          <h1 className="flex gap-2 items-center font-semibold text-[#131313B3]  mr-5">
+          <IoPeopleOutline className="text-2xl"/>  Publisher: {publisher}
           </h1>
-          <h1 className="font-semibold text-[#131313B3] mr-5">
-            Page {totalPages}
+          <h1 className="flex gap-2 items-center  font-semibold text-[#131313B3] mr-5">
+          <MdOutlineContactPage className="text-2xl"/> Page {totalPages}
           </h1>
         </div>
 

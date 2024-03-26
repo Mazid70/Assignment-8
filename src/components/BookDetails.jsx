@@ -1,26 +1,21 @@
 import { useLoaderData, useParams } from "react-router-dom";
-import { getListedBook, setListedBook, setWishListBook } from "./utility/LocalStorage";
+import { setListedBook, setWishListBook } from "./utility/LocalStorage";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { useEffect, useState } from "react";
+
 
 const BookDetails = () => {
-  const [readBook, setReadBook] = useState([]);
   const books = useLoaderData();
   const { bookId } = useParams();
   const book = books.find((book) => book.bookId == bookId);
-  useEffect(() => {
-    const getBook = getListedBook();
-    setReadBook(getBook);
-    
-  }, []);
+
 
   const addReadBoook = () => {
     checkforToast();
-    setListedBook(numberbookid);
+    setListedBook(numberbookid,checkforToast);
   };
   const addWishListBook=()=>{
-    setWishListBook(numberbookid)
+    setWishListBook(numberbookid,checkforToast)
   }
   const {
     bookName,
@@ -35,14 +30,17 @@ const BookDetails = () => {
     yearOfPublishing,
   } = book;
   const numberbookid = parseInt(bookId);
-  const exists = readBook.find((item) =>  console.log(item));
 
-  const checkforToast = () => {
-    if (!exists) {
-      toast("Book Added to Read List");
-    } else {
-      toast("Alrady added");
-    }
+
+   const checkforToast = (get) => {
+ if(get==='Book Added to ReadList' || get==='Book Added to WishList'){
+  toast.success(get);
+ }
+  else{
+    toast.error(get)
+  }    
+  
+     
   };
 
   return (
@@ -93,10 +91,10 @@ const BookDetails = () => {
             <h4 className="font-bold text-black">{rating} </h4>
           </div>
         </div>{" "}
-        <button onClick={addReadBoook} className="btn btn-outline mr-4">
+        <button onClick={()=>addReadBoook(checkforToast)} className="btn btn-outline mr-4">
           Read
         </button>
-        <button onClick={addWishListBook}
+        <button onClick={()=>addWishListBook(checkforToast)}
          className="btn btn-accent">Wishlist</button>
       </div>
     </div>
