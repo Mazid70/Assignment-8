@@ -23,10 +23,11 @@ const TriangleBar = (props) => {
 const PageToRead = () => {
     const loadData=useLoaderData()
   return (
-    <BarChart
-    className="mx-auto bg-[#13131308] p-10 rounded-xl mt-10"
-      width={1200}
-      height={756}
+    <div className="flex items-center justify-center">
+      <BarChart
+    className="mx-auto  bg-[#13131308] lg:p-10 rounded-xl mt-10 rotate-90 lg:rotate-0"
+      width={window.innerWidth < 600 ?window.innerHeight:1200}
+      height={window.innerWidth < 600 ? window.innerWidth :756}
       data={loadData}
       margin={{
         top: 20,
@@ -50,6 +51,8 @@ const PageToRead = () => {
         ))}
       </Bar>
     </BarChart>
+    </div>
+    
   );
 };
 TriangleBar.propTypes = {

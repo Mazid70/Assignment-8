@@ -17,29 +17,34 @@ const ReadBooks = ({ book }) => {
     yearOfPublishing,
   } = book;
   return (
-    <div className="flex mt-5 rounded-xl border gap-6 p-6">
-      <div className="h-[230px] w-[230px] bg-[#1313130D] flex justify-center items-center">
+    <div className="flex flex-col lg:flex-row mt-5 rounded-xl border gap-6 p-6 ">
+      <div className="h-[230px] w-[230px] bg-[#1313130D] flex justify-center items-center mx-auto">
         <img src={image} alt="" className="h-[175px] w-[130px]" />
       </div>
       <div className="space-y-4">
         <h1 className="font-bold text-2xl ">{bookName}</h1>
         <h5 className="text-base font-medium">By:{author}</h5>
-        <div className="flex items-center mb-5">
+        <div className="flex flex-col lg:flex-row justify-center lg:justify-start mb-5">
+          <div className="flex items-center	">
           <span className="font-bold text-black mr-5">Tag</span>
           {tags.map((tag, idx) => (
             <button
-              className="bg-[#23BE0A0D] font-semibold text-green-500 mr-5 px-3 py-2 rounded-2xl"
+            
+              className="bg-[#23BE0A0D] font-semibold text-green-500 text-xs lg:text-base mr-2 lg:mr-5 px-1 lg:px-3 py-2 rounded-2xl"
               key={idx}
             >
               #{tag}
             </button>
           ))}
+          </div>
+         
+          
           <h1 className="flex gap-2 items-center text-base font-normal text-[#131313B3]">
             <MdOutlineLocationOn className="text-xl" /> Year of Publishing:
             {yearOfPublishing}
           </h1>
         </div>
-        <div className="flex">
+        <div className="flex flex-col lg:flex-row gap-5 lg:gap-0">
           <h1 className="flex gap-2 items-center font-semibold text-[#131313B3]  mr-5">
             <IoPeopleOutline className="text-2xl" /> Publisher: {publisher}
           </h1>
@@ -48,7 +53,8 @@ const ReadBooks = ({ book }) => {
           </h1>
         </div>
 
-        <hr className="border-1.5 w-[1150px]" />
+        <hr className="border-1.5 lg:w-[1150px]" />
+        <div className=" flex ">
         <button className="bg-[#328EFF26] text-[#328EFF] py-2 px-4 rounded-full mr-3">
           {" "}
           Category: {category}
@@ -63,6 +69,8 @@ const ReadBooks = ({ book }) => {
           View Details
         </button>
         </Link>
+        </div>
+        
        
       </div>
     </div>

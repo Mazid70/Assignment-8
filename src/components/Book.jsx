@@ -7,7 +7,7 @@ const Book = ({ book }) => {
   return (
     <Link to={`/book/${bookId}`}>
       <div className="rounded-xl border p-5 space-y-4">
-        <div className="w-[410px] h-[300px] bg-[#F3F3F3] flex justify-center items-center mx-auto rounded-xl">
+        <div className="lg:w-[410px] h-[300px] bg-[#F3F3F3] flex justify-center items-center mx-auto rounded-xl">
           <img className="w-[140px] h-[190px]" src={image} alt={bookName} />
         </div>
         <div className="">

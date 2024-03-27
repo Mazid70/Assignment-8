@@ -38,16 +38,17 @@ const BookDetails = () => {
   };
 
   return (
-    <div key={bookId} className="flex gap-12 mt-10">
+    <div key={bookId} className="flex flex-col lg:flex-row lg:gap-12 lg:mt-10">
       <ToastContainer />
-      <div className="w-[570px] h-[710px] bg-[#1313130D] flex justify-center items-center rounded-xl">
+      <div className=" lg:w-[570px] h-[500px] lg:h-[710px] bg-[#1313130D] flex justify-center items-center rounded-xl">
         <img src={image} alt="" className="w-[70%] h-[70%]" />
       </div>
-      <div className="space-y-5 flex-1">
+      <div className="space-y-5 flex-1 p-5">
         <h1 className="text-4xl font-bold my-10">{bookName}</h1>
-        <h1 className="font-bold text-xl ">{author}</h1>
+        <h1 className="font-bold text-xl ">By: {author}</h1>
         <hr />
         <h1 className="font-bold text-xl ">{category}</h1>
+        <hr />
         <h1 className="text-base text-[#131313B3]">
           {" "}
           <span className="font-bold text-black">Review : </span>
@@ -65,7 +66,7 @@ const BookDetails = () => {
           ))}
         </div>
         <hr />
-        <div className="flex gap-16">
+        <div className="flex gap-5 lg:gap-16">
           <div className="space-y-4">
             <h1 className=" text-base font-normal text-[#131313B3]">
               Number of Pages:
@@ -93,7 +94,7 @@ const BookDetails = () => {
         </button>
         <button
           onClick={() => addWishListBook(checkforToast)}
-          className="btn btn-accent"
+          className="btn btn-accent text-white"
         >
           Wishlist
         </button>

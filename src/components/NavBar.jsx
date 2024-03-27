@@ -79,14 +79,14 @@ const NavBar = () => {
               {Link}
             </ul>
           </div>
-          <a className="btn btn-ghost text-3xl font-bold">Book Vibe</a>
+          <a className="btn btn-ghost text-xl sm:text-base lg:text-3xl font-bold">Book Vibe</a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1 text-lg ">{Link}</ul>
         </div>
         <div className="navbar-end space-x-4">
           <a className="btn bg-green-500 font-semibold text-white text-lg">Sign In</a>
-          <a className="btn bg-sky-500 font-semibold text-white text-lg">Sign In</a>
+          <a className="btn bg-sky-500 font-semibold text-white text-lg">Sign Up</a>
         </div>
       </div>
     </nav>
