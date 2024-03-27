@@ -3,20 +3,18 @@ import { setListedBook, setWishListBook } from "./utility/LocalStorage";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-
 const BookDetails = () => {
   const books = useLoaderData();
   const { bookId } = useParams();
   const book = books.find((book) => book.bookId == bookId);
 
-
   const addReadBoook = () => {
     checkforToast();
-    setListedBook(numberbookid,checkforToast);
+    setListedBook(numberbookid, checkforToast);
   };
-  const addWishListBook=()=>{
-    setWishListBook(numberbookid,checkforToast)
-  }
+  const addWishListBook = () => {
+    setWishListBook(numberbookid, checkforToast);
+  };
   const {
     bookName,
     author,
@@ -31,16 +29,12 @@ const BookDetails = () => {
   } = book;
   const numberbookid = parseInt(bookId);
 
-
-   const checkforToast = (get) => {
- if(get==='Book Added to ReadList' || get==='Book Added to WishList'){
-  toast.success(get);
- }
-  else{
-    toast.error(get)
-  }    
-  
-     
+  const checkforToast = (get) => {
+    if (get === "Book Added to ReadList" || get === "Book Added to WishList") {
+      toast.success(get);
+    } else {
+      toast.error(get);
+    }
   };
 
   return (
@@ -91,11 +85,18 @@ const BookDetails = () => {
             <h4 className="font-bold text-black">{rating} </h4>
           </div>
         </div>{" "}
-        <button onClick={()=>addReadBoook(checkforToast)} className="btn btn-outline mr-4">
+        <button
+          onClick={() => addReadBoook(checkforToast)}
+          className="btn btn-outline mr-4"
+        >
           Read
         </button>
-        <button onClick={()=>addWishListBook(checkforToast)}
-         className="btn btn-accent">Wishlist</button>
+        <button
+          onClick={() => addWishListBook(checkforToast)}
+          className="btn btn-accent"
+        >
+          Wishlist
+        </button>
       </div>
     </div>
   );

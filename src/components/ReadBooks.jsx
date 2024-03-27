@@ -2,8 +2,10 @@ import PropTypes from "prop-types";
 import { MdOutlineLocationOn } from "react-icons/md";
 import { IoPeopleOutline } from "react-icons/io5";
 import { MdOutlineContactPage } from "react-icons/md";
+import { Link } from "react-router-dom";
 const ReadBooks = ({ book }) => {
   const {
+    bookId,
     bookName,
     author,
     image,
@@ -33,15 +35,16 @@ const ReadBooks = ({ book }) => {
             </button>
           ))}
           <h1 className="flex gap-2 items-center text-base font-normal text-[#131313B3]">
-          <MdOutlineLocationOn className="text-xl"/>  Year of Publishing:{yearOfPublishing}
+            <MdOutlineLocationOn className="text-xl" /> Year of Publishing:
+            {yearOfPublishing}
           </h1>
         </div>
         <div className="flex">
           <h1 className="flex gap-2 items-center font-semibold text-[#131313B3]  mr-5">
-          <IoPeopleOutline className="text-2xl"/>  Publisher: {publisher}
+            <IoPeopleOutline className="text-2xl" /> Publisher: {publisher}
           </h1>
           <h1 className="flex gap-2 items-center  font-semibold text-[#131313B3] mr-5">
-          <MdOutlineContactPage className="text-2xl"/> Page {totalPages}
+            <MdOutlineContactPage className="text-2xl" /> Page {totalPages}
           </h1>
         </div>
 
@@ -54,10 +57,13 @@ const ReadBooks = ({ book }) => {
           {" "}
           Rating: {rating}
         </button>
+        <Link to={`/book/${bookId}`}>
         <button className="bg-[#23BE0A] text-white py-2 px-4 rounded-full">
           {" "}
           View Details
         </button>
+        </Link>
+       
       </div>
     </div>
   );
