@@ -21,45 +21,44 @@ const TriangleBar = (props) => {
 };
 
 const PageToRead = () => {
-    const loadData=useLoaderData()
+  const loadData = useLoaderData();
   return (
     <div className="flex items-center justify-center">
       <BarChart
-    className="mx-auto  bg-[#13131308] lg:p-10 rounded-xl mt-10 rotate-90 lg:rotate-0"
-      width={window.innerWidth < 600 ?window.innerHeight:1200}
-      height={window.innerWidth < 600 ? window.innerWidth :756}
-      data={loadData}
-      margin={{
-        top: 20,
-        right: 30,
-        left: 20,
-        bottom: 5,
-      }}
-    >
-      <CartesianGrid strokeDasharray="3 3" />
-      
-      <XAxis dataKey="bookName" />
-      <YAxis />
-      <Bar
-        dataKey="totalPages"
-        fill="#8884d8"
-        shape={<TriangleBar />}
-        label={{ position: "top" }}
+        className="mx-auto  bg-[#13131308] lg:p-10 rounded-xl mt-10 rotate-90 lg:rotate-0"
+        width={window.innerWidth < 600 ? window.innerHeight : 1200}
+        height={window.innerWidth < 600 ? window.innerWidth : 756}
+        data={loadData}
+        margin={{
+          top: 20,
+          right: 30,
+          left: 20,
+          bottom: 5,
+        }}
       >
-        {loadData.map((entry, index) => (
-          <Cell key={`cell-${index}`} fill={colors[index % 20]} />
-        ))}
-      </Bar>
-    </BarChart>
+        <CartesianGrid strokeDasharray="3 3" />
+
+        <XAxis dataKey="bookName" />
+        <YAxis />
+        <Bar
+          dataKey="totalPages"
+          fill="#8884d8"
+          shape={<TriangleBar />}
+          label={{ position: "top" }}
+        >
+          {loadData.map((entry, index) => (
+            <Cell key={`cell-${index}`} fill={colors[index % 20]} />
+          ))}
+        </Bar>
+      </BarChart>
     </div>
-    
   );
 };
 TriangleBar.propTypes = {
-    fill: PropTypes.string,
-    x: PropTypes.number,
-    y: PropTypes.number,
-    width: PropTypes.number,
-    height: PropTypes.number,
-  };
+  fill: PropTypes.string,
+  x: PropTypes.number,
+  y: PropTypes.number,
+  width: PropTypes.number,
+  height: PropTypes.number,
+};
 export default PageToRead;

@@ -38,13 +38,13 @@ const router = createBrowserRouter([
         element: <BookDetails></BookDetails>,
       },
       {
-        path:"/about",
-        element:<AboutUs></AboutUs>
+        path: "/about",
+        element: <AboutUs></AboutUs>,
       },
       {
-        path:"/contact",
-        element:<Contact></Contact>
-      }
+        path: "/contact",
+        element: <Contact></Contact>,
+      },
     ],
   },
 ]);

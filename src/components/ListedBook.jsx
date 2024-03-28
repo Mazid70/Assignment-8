@@ -60,7 +60,10 @@ const ListedBook = () => {
 
   return (
     <>
-    <div className="bg-[#1313130D] p-7 rounded-xl my-5"> <h1 className="text-center text-3xl font-bold">Books</h1> </div>
+      <div className="bg-[#1313130D] p-7 rounded-xl my-5">
+        {" "}
+        <h1 className="text-center text-3xl font-bold">Books</h1>{" "}
+      </div>
       <div className="flex justify-center">
         <select
           onChange={(e) => setSortBy(e.target.value)}

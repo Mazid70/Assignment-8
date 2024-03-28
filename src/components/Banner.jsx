@@ -7,12 +7,11 @@ const Banner = () => {
         <h1 className="text-3xl sm:text-3xl  lg:text-6xl font-bold">
           Books to freshen <br /> up your bookshelf
         </h1>
-        <Link to='/listed'>
-        <button className="btn bg-green-500 text-white font-bold lg:text-xl mt-5  lg:mt-12">
-          View The List
-        </button>
+        <Link to="/listed">
+          <button className="btn bg-green-500 text-white font-bold lg:text-xl mt-5  lg:mt-12">
+            View The List
+          </button>
         </Link>
-        
       </div>
       <div className="h-4/5 lg:h-auto w-4/5 lg:w-auto">
         <img src={bannerImg} alt="" />
