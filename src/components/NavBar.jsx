@@ -63,6 +63,21 @@ const NavBar = () => {
           About Us
         </NavLink>
       </li>
+      <li>
+        <NavLink
+          to="/contact"
+          style={({ isActive }) => {
+            return {
+              fontWeight: isActive ? "bold" : "",
+              color: isActive ? "#23BE0A" : "#131313CC",
+              background: isActive ? "transparent" : "",
+              border: isActive ? "1px solid #23BE0A" : "",
+            };
+          }}
+        >
+          Contact Us
+        </NavLink>
+      </li>
     </>
   );
 
