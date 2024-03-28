@@ -48,6 +48,21 @@ const NavBar = () => {
           Pages to Read
         </NavLink>
       </li>
+      <li>
+        <NavLink
+          to="/about"
+          style={({ isActive }) => {
+            return {
+              fontWeight: isActive ? "bold" : "",
+              color: isActive ? "#23BE0A" : "#131313CC",
+              background: isActive ? "transparent" : "",
+              border: isActive ? "1px solid #23BE0A" : "",
+            };
+          }}
+        >
+          About Us
+        </NavLink>
+      </li>
     </>
   );
 
