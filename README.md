@@ -1,8 +1,8 @@
-# Book Explorer
+# Book Vibe
 
 Explore a world of literature with Book Explorer!
 
-Live Site: [Book Explorer](https://mazid-assignment-8.netlify.app/)
+Live Site: https://mazid-assignment-8.netlify.app/
 
 ## Features and Characteristics
 
